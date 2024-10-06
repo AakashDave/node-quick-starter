@@ -1,0 +1,17 @@
+{
+  "include": ["bin/**/*", "utils/**/*", "enums/**/*"],
+  "exclude": ["node_modules", "dist"],  // Exclude node_modules and dist
+  "compilerOptions": {
+    "allowJs": false,       // Only allow TypeScript (no JS files), remove this if using JS too
+    "checkJs": false,       // Disable JS type checking (remove if you're not using JS)
+    "declaration": true,    // Generate .d.ts files
+    "emitDeclarationOnly": false,  // Transpile TypeScript into JavaScript as well
+    "outDir": "dist",       // Output compiled JS and declaration files into "dist"
+    "declarationMap": true, // Optional: Maps for .d.ts files, can disable if not needed
+    "strict": true,         // Strict type-checking
+    "esModuleInterop": true, // Support CommonJS imports with `import x from 'x'`
+    "moduleResolution": "Node",  // Resolve modules in Node.js style
+    "target": "ESNext",     // Ensure modern JavaScript support
+    "module": "ESNext"    // Use CommonJS modules for Node.js
+  }
+}
