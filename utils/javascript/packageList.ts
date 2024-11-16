@@ -1,5 +1,5 @@
-import { IPackage } from '../interfaces/index';
-import { PackageType } from '../enums/index';
+import { IPackage } from '../../interfaces/index';
+import { PackageType } from '../../enums/index';
 
 export const packageList: IPackage[] = [
     { name: 'express', type: PackageType.Dependency },

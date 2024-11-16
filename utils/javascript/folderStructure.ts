@@ -1,23 +1,24 @@
-import { IFileOrFolder } from "../interfaces/index";
+import { FileSystemItemType } from "../../enums";
+import { IFileOrFolder } from "../../interfaces/index";
 
 export const folderStructure: IFileOrFolder[] = [
-  { path: "src", type: "folder" },
-  { path: "src/controllers", type: "folder" },
-  { path: "src/routes", type: "folder" },
-  { path: "src/middleware", type: "folder" },
-  { path: "src/utils", type: "folder" },
-  { path: "src/db", type: "folder" },
-  { path: "src/db/models", type: "folder" },
+  { path: "src", type: FileSystemItemType.Folder },
+  { path: "src/controllers", type: FileSystemItemType.Folder },
+  { path: "src/routes", type: FileSystemItemType.Folder },
+  { path: "src/middlewares", type: FileSystemItemType.Folder },
+  { path: "src/utils", type: FileSystemItemType.Folder },
+  { path: "src/db", type: FileSystemItemType.Folder },
+  { path: "src/db/models", type: FileSystemItemType.Folder },
   {
     path: "src/app.js",
-    type: "file",
+    type: FileSystemItemType.File,
     content: `
 const express = require('express');
 const app = express();
 app.use(express.json());
 
 // Middleware example
-app.use(require('./middleware/middleware'));
+app.use(require('./middlewares/middleware'));
 
 // Routes example
 app.use('/api/users', require('./routes/userRoutes'));
@@ -33,7 +34,7 @@ module.exports = app;
   },
   {
     path: "src/routes/userRoutes.js",
-    type: "file",
+    type: FileSystemItemType.File,
     content: `
 const express = require('express');
 const router = express.Router();
@@ -49,7 +50,7 @@ module.exports = router;
   },
   {
     path: "src/controllers/userController.js",
-    type: "file",
+    type: FileSystemItemType.File,
     content: `
 module.exports = {
   getUsers: (req, res) => {
@@ -69,8 +70,8 @@ module.exports = {
     `,
   },
   {
-    path: "src/middleware/middleware.js",
-    type: "file",
+    path: "src/middlewares/middleware.js",
+    type: FileSystemItemType.File,
     content: `
 module.exports = (req, res, next) => {
   console.log('Middleware: Just checking if you’re still awake...');

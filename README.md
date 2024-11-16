@@ -56,7 +56,7 @@ my-node-package/
 │   ├── app.js
 │   ├── controllers/
 │   ├── routes/
-│   ├── middleware/
+│   ├── middlewares/
 │   ├── utils/
 │   └── db/
 ├── .gitignore

@@ -8,3 +8,12 @@ export interface IFileOrFolder {
     type: 'folder' | 'file'; 
     content?: string;
   }
+
+  export interface ITerminalQuestions
+  {
+    type: string;
+    name: string;
+    message: string;
+    choices?: string[];
+    default: any;
+  }

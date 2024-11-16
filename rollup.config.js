@@ -2,6 +2,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
+import json from '@rollup/plugin-json';
 
 export default {
   input: './bin/index.ts',
@@ -11,9 +12,10 @@ export default {
     sourcemap: true,
   },
   plugins: [
-    typescript({ tsconfig: './tsconfig.json' }),    // Then process TypeScript files
-    resolve(),        // Resolve Node.js modules
-    commonjs(),       // Convert CommonJS modules to ES6
-    terser(),         // Minify the output
+    typescript({ tsconfig: './tsconfig.json' }),
+    resolve(),        
+    commonjs(),       
+    terser(),        
+    json(),
   ],
 };
